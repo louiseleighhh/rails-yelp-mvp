@@ -1,7 +1,6 @@
-<h1>Task</h1>
-<h1><%= @restaurant.name %></h1>
-<h6><%= @restaurant.address%></h6>
-<h1><%= @restaurant.phone_number%></h1>
-<h1><%= @restaurant.category%></h1>
-<%=#link_to "Back to List", tasks_path%></h6>
-<%=#link_to "Edit task", edit_task_path%></h6>
+<h1>Restaurants</h1>
+<h1><%= link_to "Add a Restaurant", new_restaurant_path %></h1>
+<% @restaurants.each do|restaurant| %>
+<h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h1>
+<h5><%= restaurant.category %></h5>
+<% end%>

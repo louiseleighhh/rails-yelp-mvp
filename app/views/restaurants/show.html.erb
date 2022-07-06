@@ -1,0 +1,15 @@
+<h1><%= @restaurant.name %></h1>
+<h4><%= @restaurant.address %></h4>
+<h4><%= @restaurant.phone_number %></h4>
+<h4><%= @restaurant.category %></h4>
+<h2>Reviews</h2>
+<% @restaurant.reviews.each do |review| %>
+<p><%= "⭐️" * review.rating%> <%=review.content %></p>
+<% end %>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :rating, input_html: { min: 0, max: 5 } %>
+  <%= f.input :content %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
+<h4><%= link_to "Back", restaurants_path %></h4>

@@ -1,0 +1,15 @@
+<h1>Add a Restaurant</h1>
+<%= form_for @restaurant do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+    <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+    <%= f.label :category %>
+  <%= f.text_field :category %>
+  <%# <%= f.label :completed %>
+  <%# <%= f.check_box :completed %>
+  <%= f.submit %>
+<% end %>
+<h4><%= link_to "Back", restaurants_path %></h4>
