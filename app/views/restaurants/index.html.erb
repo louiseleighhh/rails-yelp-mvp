@@ -1,6 +1,16 @@
-<h1>Restaurants</h1>
-<h1><%= link_to "Add a Restaurant", new_restaurant_path %></h1>
-<% @restaurants.each do|restaurant| %>
-<h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h1>
-<h5><%= restaurant.category %></h5>
-<% end%>
+<nav class="navbar navbar-light bg-light x-3">
+  <span class="navbar-brand mb-0 h1">All Our Restaurants</span>
+  <span class="navbar-brand mb-0 h1"><%= link_to "Add a Restaurant", new_restaurant_path %></span>
+</nav>
+
+<div class = 'card' >
+  <% @restaurants.each do|restaurant| %>
+    <div class="card-product">
+      <img src="https://picsum.photos/id/<%= rand(1..100) %>/200/300" />
+      <div class="card-product-infos">
+        <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h1>
+        <p><%= restaurant.category %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
